@@ -16,7 +16,7 @@ db-ps:
 	@$(DB_DOCKER_COMPOSE) ps
 
 run:
-	go run cmd/server/main.go
+	go run cmd/hephaestus/main.go
 
 help:
 	@echo ""
