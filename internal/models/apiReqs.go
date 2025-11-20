@@ -19,8 +19,7 @@ type CreateDomainReq struct {
 }
 
 type DeleteDomainReq struct {
-	DomainID    string `json:"domain_id"`
-	DomainName  string `json:"domain_name"`
-	DNSProvider string `json:"dns_provider"`
-	UserID      string
+	DomainID   string `json:"domain_id"`
+	DomainName string `json:"domain_name"`
+	UserID     string
 }
