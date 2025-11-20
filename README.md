@@ -27,7 +27,7 @@ API Base: `/hephaestus/api/v1`
 | Method | Endpoint | Description | Params |
 |--------|----------|-------------|--------|
 | `GET` | `/domains` | List all domains and certificate statuses | **in query** `status` - string, not required; `domain_name` - string, not required; `page_size` - int, not required; `page` - int, not required; |
-| `POST` | `/domains` | Create a domain entry and automatically forge a certificate | **in body** `domain` - string, required; `nginx_container_name(your service working on)` - string, required; `dns_provider` - string, required; `alternative_domains` - []string, not required; `verification_method` - string, not required; `verification_method` - bool, not required; |
+| `POST` | `/domains` | Create a domain entry and automatically forge a certificate | **in body** `domain` - string, required; `nginx_container_name(your service working on)` - string, required; `dns_provider` - string, required; `alternative_domains` - []string, not required; `verification_method` - string, not required; `auto_renew` - bool, not required; |
 | `DELETE` | `/domains` | Remove domain and its certificate files | **in query** `domain_id` - string, not required; `domain_name` - string, required; |
 
 ---
