@@ -70,7 +70,7 @@ func main() {
 
 	// starting http server
 	log.Info("Starting the server on port ", cfg.Server.Port)
-	if err := http.ListenAndServe(":"+cfg.Server.Port, router); err != nil {
+	if err := http.ListenAndServe(cfg.Server.Port, router); err != nil {
 		log.Fatal("Error starting server: ", err)
 	}
 	log.Info("Server started successful")

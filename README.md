@@ -133,7 +133,7 @@ export AUTH_ACCESS_KEY="your_access_secret"
 export AUTH_REFRESH_KEY="your_refresh_secret"
 
 export CERT_RENEWAL_DURATION="24"   # how often scheduler will check if token expired
-export SERVER_PORT="8080"
+export SERVER_PORT="localip:8080"
 export LOG_LEVEL="info"
 ```
 
@@ -223,7 +223,7 @@ certs:
   renewal_duration: "24h"   # how often scheduler will check if token expired
 
 server:
-  port: "8080"
+  port: "lockalip:8080"
 
 logger:
   log_level: "info"
@@ -236,10 +236,28 @@ export CONFIG_PATH="/absolute/path/to/config.yaml"
 ```
 
 
-### 7. Run the service
+### 9. Close port 8080 to the outside
+
+```bash
+sudo ufw deny 8080
+```
+
+
+### 8. Run the service
 
 From the project root:
 
 ```bash
 make run
 ```
+
+
+### 9. Connecting via SSH tunnel
+
+```bash
+ssh -N -L 8080:localip:8080 user@serverip
+```
+
+---
+
+Now you can make requests to the service throug `http://localip:8080/hephaestus/api/v1/`
